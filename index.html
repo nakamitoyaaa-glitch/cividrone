@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CIVIDRONE</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIVIDRONE - Jasa Pemetaan, Survei Udara & Fotogrametri Presisi Tinggi</title>
+    <!-- Tailwind CSS for modern, premium utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat for bold structural titles, Inter for legible body copy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brandBlack: '#090D16',       /* Deep Charcoal Black */
+                        brandBlackLight: '#111827',  /* Midnight Gray for Cards */
+                        brandBlue: '#2563EB',        /* High-Vis Electric Blue */
+                        brandBlueDark: '#1D4ED8',    /* Royal Accent Blue */
+                        brandBlueLight: '#3B82F6',   /* Bright Cyan-Blue */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth, modern component states */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        /* Custom scrollbar to match premium theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563EB;
+        }
+    </style>
+</head>
+<body class="bg-[#05070C] font-sans text-slate-300 antialiased selection:bg-brandBlue selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-brandBlack/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
+            
+            <!-- Brand Name Typography (Replaced Image Logo) -->
+            <a href="#hero" class="flex items-center gap-2 group">
+                <span class="text-2xl font-montserrat font-extrabold tracking-wider text-white group-hover:text-brandBlueLight transition duration-300">CIVI<span class="text-brandBlue">DRONE</span></span>
+            </a>
+
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-400">
+                <a href="#hero" class="text-brandBlue hover:text-white transition duration-200">Beranda</a>
+                <a href="#keunggulan" class="hover:text-white transition duration-200">Keunggulan</a>
+                <a href="#layanan" class="hover:text-white transition duration-200">Layanan Jasa</a>
+                <a href="#roi" class="hover:text-white transition duration-200">Kalkulator ROI</a>
+                <a href="#portofolio" class="hover:text-white transition duration-200">Hasil Output</a>
+                <a href="#proses" class="hover:text-white transition duration-200">Alur Kerja</a>
+            </nav>
+
+            <!-- CTA Call Button -->
+            <div class="hidden sm:flex items-center">
+                <a href="#kontak" class="bg-brandBlue hover:bg-brandBlueDark text-white px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 hover:shadow-lg hover:shadow-brandBlue/20 border border-brandBlueLight/20 flex items-center gap-2">
+                    <i class="fa-solid fa-headset"></i> Mulai Proyek
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-2xl text-slate-400 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Expandable Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brandBlack border-b border-slate-800/80 px-4 py-6 space-y-4 shadow-xl">
+            <a href="#hero" class="block text-sm font-semibold text-slate-300 hover:text-brandBlue" onclick="toggleMobileMenu()">Beranda</a>
+            <a href="#keunggulan" class="block text-sm font-semibold text-slate-300 hover:text-brandBlue" onclick="toggleMobileMenu()">Keunggulan</a>
+            <a href="#layanan" class="block text-sm font-semibold text-slate-300 hover:text-brandBlue" onclick="toggleMobileMenu()">Layanan Jasa</a>
+            <a href="#roi" class="block text-sm font-semibold text-slate-300 hover:text-brandBlue" onclick="toggleMobileMenu()">Kalkulator ROI</a>
+            <a href="#portofolio" class="block text-sm font-semibold text-slate-300 hover:text-brandBlue" onclick="toggleMobileMenu()">Hasil Output</a>
+            <a href="#proses" class="block text-sm font-semibold text-slate-300 hover:text-brandBlue" onclick="toggleMobileMenu()">Alur Kerja</a>
+            <a href="#kontak" class="w-full text-center block bg-brandBlue text-white py-3 rounded-lg text-sm font-bold" onclick="toggleMobileMenu()">Hubungi Kami</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative bg-black text-white py-24 sm:py-32 md:py-40 overflow-hidden border-b border-slate-800">
+        <!-- Background Imagery with fallback placeholder -->
+        <div class="absolute inset-0 z-0 opacity-25">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80" 
+                 alt="Sipil Konstruksi Udara" 
+                 class="w-full h-full object-cover"
+                 onerror="this.src='https://placehold.co/1600x800/090D16/ffffff?text=Civil+Infrastructures+Surveys'">
+        </div>
+        <!-- Modern Grid Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-brandBlack via-brandBlack/95 to-transparent z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#05070C] via-transparent to-transparent z-10"></div>
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-8 space-y-6">
+                <div class="inline-flex items-center gap-2.5 bg-brandBlue/10 border border-brandBlue/30 px-4 py-1.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-brandBlue animate-pulse"></span>
+                    <span class="text-xs font-bold text-brandBlueLight tracking-widest uppercase font-montserrat">Presisi Geospasial Sipil</span>
+                </div>
+                <h1 class="text-3.5xl sm:text-5xl md:text-6xl font-montserrat font-extrabold tracking-tight leading-tight text-white">
+                    Survei Udara Presisi Tinggi untuk Konstruksi Kokoh & Terstruktur
+                </h1>
+                <p class="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed">
+                    CIVIDRONE menghadirkan layanan fotogrametri udara, inspeksi vertikal struktur, dan pelacakan progres proyek infrastruktur berbasis drone secara akurat untuk memandu keputusan para manajer teknik.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#kontak" class="bg-brandBlue hover:bg-brandBlueDark text-white font-bold px-7 py-4 rounded-xl transition duration-300 shadow-lg shadow-brandBlue/20 flex items-center gap-2.5 text-sm">
+                        <i class="fa-solid fa-comments"></i> Konsultasi Proyek Gratis
+                    </a>
+                    <a href="#layanan" class="bg-slate-900/80 hover:bg-slate-800 text-white font-semibold px-7 py-4 rounded-xl transition duration-200 border border-slate-850 flex items-center gap-2 text-sm">
+                        Pelajari Layanan <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="keunggulan" class="py-20 bg-brandBlack relative border-b border-slate-850">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-brandBlueLight tracking-widest uppercase font-montserrat">Mengapa Memilih Kami?</span>
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-white mt-2">Menjawab Tantangan Survei Lapangan yang Lambat & Berisiko</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-[#0C1220] border border-slate-800 p-8 rounded-2xl shadow-md hover:shadow-xl hover:border-brandBlue/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brandBlue/10 border border-brandBlue/30 rounded-xl flex items-center justify-center text-brandBlue text-2.5xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-lg text-white mb-3">Akurasi Tingkat Sentimeter</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Integrasi GPS RTK/PPK pada armada drone industri dan penempatan GCP (*Ground Control Point*) darat menjamin deviasi kesalahan spasial minimal untuk pemetaan topografi.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-[#0C1220] border border-slate-800 p-8 rounded-2xl shadow-md hover:shadow-xl hover:border-brandBlue/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brandBlue/10 border border-brandBlue/30 text-brandBlue rounded-xl flex items-center justify-center text-2.5xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-gauge-high"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-lg text-white mb-3">Akuisisi Data 10x Lebih Cepat</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Mampu menyisir lahan ratusan hektar dalam hitungan jam, memangkas proses pengerjaan tradisional (*theodolite/total station*) yang umumnya memakan waktu berminggu-minggu.
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-[#0C1220] border border-slate-800 p-8 rounded-2xl shadow-md hover:shadow-xl hover:border-brandBlue/30 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-brandBlue/10 border border-brandBlue/30 rounded-xl flex items-center justify-center text-brandBlue text-2.5xl mb-6 shadow-inner">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-montserrat font-bold text-lg text-white mb-3">Keamanan K3 Maksimal</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Meniadakan keharusan fisik bagi surveyor sipil melintasi medan rawan bahaya seperti lereng galian terjal, vegetasi lebat, jurang, atau area ketinggian ekstrem.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="layanan" class="py-20 bg-[#05070C] relative border-b border-slate-850">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-xs font-extrabold text-brandBlueLight tracking-widest uppercase font-montserrat">Portofolio Kompetensi</span>
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-white mt-2">Layanan Teknis untuk Berbagai Fase Konstruksi</h2>
+            </div>
+
+            <!-- Block 1: Right Image, Left Text -->
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                <div class="space-y-6">
+                    <div class="w-12 h-12 bg-brandBlackLight text-brandBlue border border-brandBlue/20 rounded-xl flex items-center justify-center text-lg font-bold font-montserrat shadow-md">01</div>
+                    <h3 class="text-2xl sm:text-3xl font-montserrat font-bold text-white">Survei Topografi & Fotogrametri</h3>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Kami mengonversi ribuan foto udara berkualitas tinggi menjadi model ortomosaik dua dimensi yang diperbaiki secara spasial (*Orthophoto*) dengan resolusi tinggi mencapai nilai GSD (*Ground Sampling Distance*) di bawah 2 cm/piksel. Sangat ideal untuk perencanaan rute jalan raya, batas konsesi tambang, dan tata kelola air sipil.
+                    </p>
+                    <ul class="space-y-3 text-slate-300 text-sm sm:text-base font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandBlue"></i> Peta Ortomosaik Digital (Resolusi Tinggi GeoTIFF)</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandBlue"></i> Peta Garis Kontur & Elevasi Elevasi Lapangan</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandBlue"></i> Digital Terrain Model (DTM) & DSM</li>
+                    </ul>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80 aspect-video bg-slate-900 group">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" 
+                         alt="Engineer pemetaan sipil" 
+                         class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/800x450/111827/ffffff?text=Topographical+Mapping'">
+                </div>
+            </div>
+
+            <!-- Block 2: Left Image, Right Text -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="md:order-last space-y-6">
+                    <div class="w-12 h-12 bg-brandBlackLight text-brandBlue border border-brandBlue/20 rounded-xl flex items-center justify-center text-lg font-bold font-montserrat shadow-md">02</div>
+                    <h3 class="text-2xl sm:text-3xl font-montserrat font-bold text-white">Inspeksi & Monitoring Proyek Konstruksi</h3>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Pantau kemajuan fisik struktur proyek Anda secara mingguan untuk kejelasan transparansi investor atau pengawasan Pimpro. Kami melayani inspeksi jarak dekat untuk memverifikasi struktur jembatan beton yang mengalami keretakan rambut, karat pylon bertegangan tinggi, dan kebocoran atap bangunan pabrik industri.
+                    </p>
+                    <ul class="space-y-3 text-slate-300 text-sm sm:text-base font-medium">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandBlue"></i> Dokumentasi Foto & Video Resolusi 4K Berkala</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandBlue"></i> Deteksi Retak & Karat Struktur Vertikal</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-brandBlue"></i> Kalkulasi Estimasi Volume Galian & Timbunan (*Cut & Fill*)</li>
+                    </ul>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800/80 aspect-video bg-slate-900 group">
+                    <img src="https://images.unsplash.com/photo-1501514809658-2f87a675e47f?auto=format&fit=crop&w=800&q=80" 
+                         alt="Inspeksi Drone Infrastruktur" 
+                         class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-500"
+                         onerror="this.src='https://placehold.co/800x450/111827/ffffff?text=Infrastructure+Monitoring'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roi" class="py-20 bg-brandBlack text-white relative border-b border-slate-850">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-brandBlueLight tracking-widest uppercase font-montserrat">Kalkulator Penghematan</span>
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-white mt-2">Bandingkan Efisiensi Survei Udara vs Metode Tradisional</h2>
+                <p class="text-slate-400 text-sm mt-3">Gunakan simulator kami untuk menghitung taksiran waktu dan anggaran proyek sipil yang bisa Anda pangkas.</p>
+            </div>
+
+            <div class="bg-[#0C1220] border border-slate-800/80 rounded-3xl p-6 md:p-10 grid md:grid-cols-12 gap-8 items-center max-w-5xl mx-auto shadow-xl">
+                <!-- Input Slider Control -->
+                <div class="md:col-span-5 space-y-6">
+                    <div class="space-y-3">
+                        <label for="areaSlider" class="block text-sm font-bold text-slate-300 font-montserrat uppercase tracking-wider">Luas Wilayah Survei Proyek:</label>
+                        <div class="flex justify-between items-center bg-[#070A12] px-5 py-4 rounded-xl border border-slate-800/80">
+                            <span class="text-3xl font-extrabold text-brandBlue" id="areaValueDisplay">50</span>
+                            <span class="text-xs text-slate-400 font-extrabold uppercase tracking-widest">Hektar (Ha)</span>
+                        </div>
+                        <input id="areaSlider" type="range" min="10" max="500" step="10" value="50" oninput="calculateSavings()" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brandBlue mt-4">
+                    </div>
+                    <div class="text-xs text-slate-400 leading-relaxed bg-[#070A12]/50 p-4 rounded-xl border border-slate-800/50">
+                        <i class="fa-solid fa-circle-info text-brandBlue mr-1.5 text-sm"></i> Estimasi dihitung berdasarkan standar pengerjaan topografi area sipil terbuka (perencanaan jalan, lahan real-estate, area tanggul) dengan operasional tim survei standar.
+                    </div>
+                </div>
+
+                <!-- Live Results Display -->
+                <div class="md:col-span-7 grid grid-cols-2 gap-4">
+                    <!-- Tradisional Card -->
+                    <div class="bg-[#070A12] p-5 sm:p-6 rounded-2xl border border-slate-800 space-y-2.5">
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Tradisional (Theodolite/TS)</span>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-slate-300" id="tradTime">5 Hari</div>
+                        <div class="text-xs text-slate-400">Estimasi Biaya: <strong class="text-slate-300" id="tradCost">Rp 25.0M</strong></div>
+                        <div class="w-full bg-slate-850 h-2 rounded-full overflow-hidden mt-3">
+                            <div class="bg-slate-600 h-full w-full"></div>
+                        </div>
+                    </div>
+                    <!-- CIVIDRONE Card -->
+                    <div class="bg-brandBlue/5 p-5 sm:p-6 rounded-2xl border border-brandBlue/35 space-y-2.5 relative overflow-hidden">
+                        <div class="absolute right-3 top-3 text-brandBlue text-xs"><i class="fa-solid fa-circle-check animate-pulse"></i></div>
+                        <span class="text-[10px] text-brandBlueLight font-bold uppercase tracking-wider block">CIVIDRONE Jasa Udara</span>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brandBlue" id="droneTime">1 Hari</div>
+                        <div class="text-xs text-slate-300">Estimasi Biaya: <strong class="text-white" id="droneCost">Rp 12.5M</strong></div>
+                        <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mt-3">
+                            <div class="bg-brandBlue h-full" id="droneProgressWidth" style="width: 20%;"></div>
+                        </div>
+                    </div>
+                    <!-- Savings Announcement -->
+                    <div class="col-span-2 bg-gradient-to-r from-brandBlue to-brandBlueDark text-white p-5 rounded-2xl text-center space-y-1 shadow-lg">
+                        <div class="text-xs font-semibold uppercase tracking-widest text-blue-100">Anda Memangkas Durasi Sebesar</div>
+                        <div class="text-2xl sm:text-3xl font-extrabold font-montserrat" id="timeSavings">80% Lebih Cepat!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portofolio" class="py-20 bg-[#05070C] relative border-b border-slate-850">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-brandBlueLight tracking-widest uppercase font-montserrat">Deliverables</span>
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-white mt-2">Format Data Output Siap Pakai</h2>
+                <p class="text-slate-400 text-sm mt-3">Seluruh hasil pengolahan data kami dikirim dalam ekstensi file standar industri sipil yang siap diimpor langsung ke AutoCAD, Civil 3D, ArcGIS, atau Revit.</p>
+            </div>
+
+            <!-- Tab Buttons Container -->
+            <div class="flex justify-center border-b border-slate-800/80 mb-10 max-w-xl mx-auto">
+                <button onclick="switchTab('tab-ortho')" id="btn-tab-ortho" class="flex-1 py-4 text-center text-xs sm:text-sm font-bold border-b-2 border-brandBlue text-brandBlue transition duration-200 focus:outline-none">
+                    <i class="fa-solid fa-map-location-dot mr-1.5"></i> Ortomosaik 2D
+                </button>
+                <button onclick="switchTab('tab-contour')" id="btn-tab-contour" class="flex-1 py-4 text-center text-xs sm:text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition duration-200 focus:outline-none">
+                    <i class="fa-solid fa-mountain mr-1.5"></i> Kontur & DEM
+                </button>
+                <button onclick="switchTab('tab-point')" id="btn-tab-point" class="flex-1 py-4 text-center text-xs sm:text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-300 transition duration-200 focus:outline-none">
+                    <i class="fa-solid fa-cubes mr-1.5"></i> Point Cloud 3D
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="max-w-4xl mx-auto bg-[#0C1220] rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-lg min-h-[300px] flex flex-col justify-between">
+                <!-- Ortho Tab Content -->
+                <div id="tab-ortho" class="tab-content active space-y-4">
+                    <h4 class="font-montserrat font-bold text-xl text-white">Peta Ortofoto Tegak Lurus Beresolusi Tinggi</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed sm:text-base">
+                        Kami merangkai ratusan foto udara menjadi satu berkas raksasa terkalibrasi spasial yang bebas distorsi perspektif. Output fotogrametri ini sangat ideal untuk menghitung jarak planar horizontal, luas kavling, dan pelaporan situasi rona awal lapangan (*baseline survey*).
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 bg-brandBlack/60 p-4 rounded-xl border border-slate-800/80 text-xs sm:text-sm text-slate-300">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-file-invoice text-brandBlue"></i> Format: GeoTIFF (.tif)</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-brandBlue"></i> Dokumen: PDF Kualitas HD</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-laptop-code text-brandBlue"></i> Software: AutoCAD, QGIS, ArcGIS</div>
+                    </div>
+                </div>
+
+                <!-- Contour Tab Content -->
+                <div id="tab-contour" class="tab-content space-y-4">
+                    <h4 class="font-montserrat font-bold text-xl text-white">Peta Garis Kontur & Model Elevasi Digital</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed sm:text-base">
+                        Garis kontur topografi yang diekstraksi dari data DSM/DTM per interval elevasi tertentu (misal: per 0.5 meter atau 1 meter). Sangat krusial untuk menganalisis perencanaan kemiringan jalan, alur drainase pencegah banjir, serta pekerjaan pembukaan lahan (*grading*).
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 bg-brandBlack/60 p-4 rounded-xl border border-slate-800/80 text-xs sm:text-sm text-slate-300">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-file-invoice text-brandBlue"></i> Format: DWG/DXF, Shapefile</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-mountain text-brandBlue"></i> Output: DTM & DSM</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-laptop-code text-brandBlue"></i> Software: Civil 3D, Global Mapper</div>
+                    </div>
+                </div>
+
+                <!-- Point Cloud Tab Content -->
+                <div id="tab-point" class="tab-content space-y-4">
+                    <h4 class="font-montserrat font-bold text-xl text-white">Kumpulan Titik Koordinat 3D (Point Cloud)</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed sm:text-base">
+                        Jutaan koordinat titik spasial (X, Y, Z) dengan data densitas rapat yang mewakili dimensi permukaan struktur secara akurat. Format model 3D ini sangat berharga untuk merekonstruksi tebing jalan tol, lereng pertambangan, dan integrasi dengan pemodelan BIM.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 bg-brandBlack/60 p-4 rounded-xl border border-slate-800/80 text-xs sm:text-sm text-slate-300">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-file-invoice text-brandBlue"></i> Format: LAS, LAZ, OBJ, PLY</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-cubes text-brandBlue"></i> Output: 3D Texturized Mesh</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-laptop-code text-brandBlue"></i> Software: Revit (BIM), Pix4D</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proses" class="py-20 bg-brandBlack relative border-b border-slate-850">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-extrabold text-brandBlueLight tracking-widest uppercase font-montserrat">Prosedur Kerja</span>
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold text-white mt-2">Alur Kolaborasi yang Praktis & Terstruktur</h2>
+            </div>
+
+            <!-- Timeline Stepper Layout -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto relative">
+                <!-- Step 1 -->
+                <div class="bg-[#0C1220] p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-3 relative shadow-md">
+                    <div class="absolute -top-4 left-6 w-9 h-9 bg-brandBlack text-brandBlue rounded-full flex items-center justify-center font-bold text-sm border-2 border-slate-850 shadow-lg">1</div>
+                    <h4 class="font-montserrat font-bold text-base text-white mt-1">Konsultasi Kebutuhan</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Diskusikan cakupan batas koordinat wilayah proyek, target tingkat ketelitian peta (GSD), dan timeline penyelesaian.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-[#0C1220] p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-3 relative shadow-md">
+                    <div class="absolute -top-4 left-6 w-9 h-9 bg-brandBlack text-brandBlue rounded-full flex items-center justify-center font-bold text-sm border-2 border-slate-850 shadow-lg">2</div>
+                    <h4 class="font-montserrat font-bold text-base text-white mt-1">Flight Planning & Izin</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Penyusunan rencana jalur terbang autopilot, pengurusan izin ruang udara sipil, serta penentuan koordinat patok GCP di darat.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-[#0C1220] p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-3 relative shadow-md">
+                    <div class="absolute -top-4 left-6 w-9 h-9 bg-brandBlack text-brandBlue rounded-full flex items-center justify-center font-bold text-sm border-2 border-slate-850 shadow-lg">3</div>
+                    <h4 class="font-montserrat font-bold text-base text-white mt-1">Akuisisi Data Lapangan</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Penerbangan otomatis drone pengukur, diiringi pengukuran koordinat GCP presisi di darat menggunakan alat GNSS Receiver.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="bg-[#0C1220] p-6 sm:p-7 rounded-2xl border border-slate-800 space-y-3 relative shadow-md">
+                    <div class="absolute -top-4 left-6 w-9 h-9 bg-brandBlue text-white rounded-full flex items-center justify-center font-bold text-sm border-2 border-brandBlue/30 shadow-lg">4</div>
+                    <h4 class="font-montserrat font-bold text-base text-white mt-1">Processing & Deliverables</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Penyusunan fotogrametri di workstation kami, koreksi akurasi, dan pengiriman tautan unduhan file digital siap impor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-20 bg-[#05070C] text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12">
+            <!-- Text Info -->
+            <div class="space-y-6 flex flex-col justify-center">
+                <span class="text-xs font-extrabold text-brandBlueLight tracking-widest uppercase font-montserrat">Hubungi Kami</span>
+                <h2 class="text-3xl md:text-4xl font-montserrat font-bold tracking-tight">Diskusikan Kebutuhan Survei Udara Sipil Anda</h2>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-md">
+                    Tim ahli kami siap memberikan solusi teknis terbaik dan penawaran harga sesuai dengan cakupan parameter area proyek infrastruktur Anda.
+                </p>
+                <div class="space-y-4 text-sm text-slate-300 pt-4 border-t border-slate-850">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-brandBlue text-lg"></i>
+                        <span>proyek@cividrone.co.id</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-brandBlue text-lg"></i>
+                        <span>+62 811 111 111 (Konsultasi Jasa)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-location-dot text-brandBlue text-lg"></i>
+                        <span>Gedung Rekayasa Sipil Lt. 3, Denpasar, Bali, Indonesia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="bg-brandBlack border border-slate-800 p-6 md:p-8 rounded-2xl shadow-xl">
+                <form id="projectForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-xs font-semibold text-slate-450 uppercase tracking-wider mb-1.5">Nama Lengkap Anda</label>
+                        <input type="text" id="name" required class="w-full bg-[#05070C] border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandBlue transition">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="email" class="block text-xs font-semibold text-slate-450 uppercase tracking-wider mb-1.5">Alamat Email</label>
+                            <input type="email" id="email" required class="w-full bg-[#05070C] border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandBlue transition">
+                        </div>
+                        <div>
+                            <label for="company" class="block text-xs font-semibold text-slate-450 uppercase tracking-wider mb-1.5">Perusahaan</label>
+                            <input type="text" id="company" class="w-full bg-[#05070C] border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandBlue transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="serviceType" class="block text-xs font-semibold text-slate-450 uppercase tracking-wider mb-1.5">Layanan yang Diperlukan</label>
+                        <select id="serviceType" class="w-full bg-[#05070C] border border-slate-800 rounded-lg px-4 py-3 text-slate-300 text-sm focus:outline-none focus:border-brandBlue transition">
+                            <option>Fotogrametri & Pemetaan Topografi</option>
+                            <option>Inspeksi & Monitoring Progres Proyek</option>
+                            <option>Pengukuran Lidar & GIS Integration</option>
+                            <option>Lainnya (Dokumentasi Udara/Sipil)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-xs font-semibold text-slate-450 uppercase tracking-wider mb-1.5">Deskripsi Lokasi / Perkiraan Luas Area</label>
+                        <textarea id="message" rows="3" required class="w-full bg-[#05070C] border border-slate-800 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandBlue transition"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brandBlue hover:bg-brandBlueDark text-white font-bold py-3.5 px-6 rounded-lg transition duration-300 shadow-lg shadow-brandBlue/10 flex items-center justify-center gap-2 text-sm mt-3 border border-brandBlueLight/15">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Permintaan Penawaran
+                    </button>
+                </form>
+                
+                <!-- Success Message Display -->
+                <div id="successCard" class="hidden text-center py-10 space-y-5">
+                    <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto border border-emerald-500/20">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-montserrat font-bold text-xl text-white">Formulir Berhasil Terkirim!</h4>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-2 max-w-xs mx-auto">Terima kasih atas kiriman formulir Anda. Tim teknisi CIVIDRONE akan segera menghubungi Anda dalam kurun waktu 1x24 jam kerja.</p>
+                    </div>
+                    <button onclick="resetForm()" class="bg-slate-800 hover:bg-slate-700 text-xs text-white font-semibold px-4 py-2 rounded-lg transition border border-slate-700">Kirim Formulir Baru</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brandBlack text-slate-500 py-16 border-t border-slate-850">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+            <div class="space-y-5">
+                <!-- Footer Brand Name Typography (Replaced Image Logo) -->
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl font-montserrat font-extrabold tracking-wider text-white">CIVI<span class="text-brandBlue">DRONE</span></span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">Penyedia jasa pemetaan udara presisi tinggi, survei topografi digital, serta monitoring progres berkala berkualitas tinggi untuk mendukung keputusan rekayasa sipil.</p>
+            </div>
+            <div>
+                <h4 class="font-montserrat font-semibold text-sm text-white mb-4 uppercase tracking-widest text-xs">Layanan Teknis</h4>
+                <ul class="space-y-2 text-xs text-slate-450">
+                    <li><a href="#layanan" class="hover:text-white transition duration-200">Fotogrametri Udara</a></li>
+                    <li><a href="#layanan" class="hover:text-white transition duration-200">Survei Terestris Sipil</a></li>
+                    <li><a href="#layanan" class="hover:text-white transition duration-200">Inspeksi Keretakan Struktur</a></li>
+                    <li><a href="#layanan" class="hover:text-white transition duration-200">Analisis LiDAR & GIS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-montserrat font-semibold text-sm text-white mb-4 uppercase tracking-widest text-xs">Navigasi Halaman</h4>
+                <ul class="space-y-2 text-xs text-slate-450">
+                    <li><a href="#hero" class="hover:text-white transition duration-200">Beranda</a></li>
+                    <li><a href="#keunggulan" class="hover:text-white transition duration-200">Keunggulan Utama</a></li>
+                    <li><a href="#roi" class="hover:text-white transition duration-200">Kalkulator ROI</a></li>
+                    <li><a href="#kontak" class="hover:text-white transition duration-200">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-montserrat font-semibold text-sm text-white mb-4 uppercase tracking-widest text-xs">Regulasi & Keselamatan</h4>
+                <p class="text-xs text-slate-400 leading-relaxed mb-3">Seluruh kru pilot CIVIDRONE memiliki sertifikat kompetensi penerbangan drone resmi DKUPPU serta patuh sepenuhnya pada regulasi udara PM 37/2020.</p>
+                <span class="inline-block bg-[#05070C] text-brandBlueLight border border-brandBlue/30 font-bold px-3 py-1.5 rounded text-[10px] uppercase tracking-widest">K3 & Safety First</span>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-6 border-t border-slate-850 text-center text-xs text-slate-600">
+            &copy; 2026 CIVIDRONE Indonesia. Semua hak cipta dilindungi undang-undang.
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile responsive menu overlay
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Add event listener to mobile menu button
+        document.getElementById('mobileMenuBtn').addEventListener('click', toggleMobileMenu);
+
+        // Core Mathematical Estimator Logic for ROI Section
+        function calculateSavings() {
+            const area = parseInt(document.getElementById('areaSlider').value);
+            document.getElementById('areaValueDisplay').innerText = area;
+
+            // Mathematical modeling matching typical industrial performance ratios
+            // Traditional surveying takes roughly 1 day per 10 hectares for detailed setups, baseline 2 days minimum
+            const tradDays = Math.max(2, Math.ceil(area / 10));
+            // Drone acquisition takes 1 day for boundaries up to 150 Ha, 2 days up to 300 Ha
+            const droneDays = Math.max(1, Math.ceil(area / 150));
+            
+            // Traditional variable costing in Juta Rupiah (Rp 500k per Ha + admin baseline)
+            const tradCostValue = (area * 0.5) + 10; 
+            // Drone highly optimized variable costing (Rp 150k per Ha + mobilization baseline)
+            const droneCostValue = (area * 0.15) + 5; 
+
+            // Updating structural views on screen
+            document.getElementById('tradTime').innerText = `${tradDays} Hari`;
+            document.getElementById('droneTime').innerText = `${droneDays} Hari`;
+
+            document.getElementById('tradCost').innerText = `Rp ${tradCostValue.toFixed(1)}Jt`;
+            document.getElementById('droneCost').innerText = `Rp ${droneCostValue.toFixed(1)}Jt`;
+
+            // Calculate percentage efficiency
+            const savingsPercent = Math.round(((tradDays - droneDays) / tradDays) * 100);
+            document.getElementById('timeSavings').innerText = `${savingsPercent}% Lebih Cepat!`;
+
+            // Dynamic width bar updates
+            const pct = Math.max(10, Math.min(100, Math.round((droneDays / tradDays) * 100)));
+            document.getElementById('droneProgressWidth').style.width = `${pct}%`;
+        }
+
+        // Deliverables Tab Controller
+        function switchTab(tabId) {
+            // Unmount active tab content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Deactivate and clear active states from buttons
+            const buttons = document.querySelectorAll('[id^="btn-tab-"]');
+            buttons.forEach(button => {
+                button.classList.remove('border-brandBlue', 'text-brandBlue');
+                button.classList.add('border-transparent', 'text-slate-500', 'hover:text-slate-300');
+            });
+
+            // Activate targeted container tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Style active target button state
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            activeBtn.classList.remove('border-transparent', 'text-slate-500', 'hover:text-slate-300');
+            activeBtn.classList.add('border-brandBlue', 'text-brandBlue');
+        }
+
+        // Simulated Secure Form Action Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            // Perform slick visual switch to success panel instead of raw alerts
+            document.getElementById('projectForm').classList.add('hidden');
+            document.getElementById('successCard').classList.remove('hidden');
+        }
+
+        // Reset the simulated form interface safely
+        function resetForm() {
+            document.getElementById('projectForm').reset();
+            document.getElementById('successCard').classList.add('hidden');
+            document.getElementById('projectForm').classList.remove('hidden');
+        }
+
+        // Initialize mathematics model and layout options instantly on document load
+        window.onload = function() {
+            calculateSavings();
+        }
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
